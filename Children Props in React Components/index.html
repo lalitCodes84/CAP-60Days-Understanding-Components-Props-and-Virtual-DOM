@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic List Rendering</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Defining the Image component
+    function Image({ src }) {
+      return (
+        <img src={src} alt="Gallery Image" style={{ width: "100%", height: "auto" }} />
+      );
+    }
+
+    // Defining the Gallery component
+    function Gallery({ children }) {
+      return (
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "10px" }}>
+          {children}
+        </div>
+      );
+    }
+
+    // Render the Gallery component with Image components as children
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(
+      <Gallery>
+        <Image src="https://media.istockphoto.com/id/1652229858/photo/happy-running-pembroke-welsh-corgi-puppy.jpg?s=612x612&w=0&k=20&c=hXTgvS12Oy0AYvTWcFfsg36U2fhX7Xa4jlNO0sL1AU0=" />
+        <Image src="https://media.istockphoto.com/id/1652227670/photo/running-pembroke-welsh-corgi-puppy.jpg?s=612x612&w=0&k=20&c=QuVIhyBGUcoc5Vqq8x3O5_ktxvZl4QCyebr_K4bKbxE=" />
+        <Image src="https://media.istockphoto.com/id/1652228743/photo/running-pembroke-welsh-corgi-puppy.jpg?s=612x612&w=0&k=20&c=JS0Tm_YEoJ7n5JeyMCWrqFUYdxDg-vjQEzIrPbwk-2E=" />
+        <Image src="https://media.istockphoto.com/id/1652226069/photo/pembroke-welsh-corgi-puppies-sibling.jpg?s=612x612&w=0&k=20&c=IQbgF-KKD7Pe3AOyYfZYS6Du59rJCRd9Wl1Bg1g8MeA=" />
+        <Image src="https://media.istockphoto.com/id/1652229858/photo/happy-running-pembroke-welsh-corgi-puppy.jpg?s=612x612&w=0&k=20&c=hXTgvS12Oy0AYvTWcFfsg36U2fhX7Xa4jlNO0sL1AU0=" />
+        <Image src="https://media.istockphoto.com/id/1652227670/photo/running-pembroke-welsh-corgi-puppy.jpg?s=612x612&w=0&k=20&c=QuVIhyBGUcoc5Vqq8x3O5_ktxvZl4QCyebr_K4bKbxE=" />
+        <Image src="https://media.istockphoto.com/id/1652228743/photo/running-pembroke-welsh-corgi-puppy.jpg?s=612x612&w=0&k=20&c=JS0Tm_YEoJ7n5JeyMCWrqFUYdxDg-vjQEzIrPbwk-2E=" />
+        <Image src="https://media.istockphoto.com/id/1652226069/photo/pembroke-welsh-corgi-puppies-sibling.jpg?s=612x612&w=0&k=20&c=IQbgF-KKD7Pe3AOyYfZYS6Du59rJCRd9Wl1Bg1g8MeA=" />
+
+        {/* You Can Add Extra Images Here */}
+      </Gallery>
+    );
+  </script>
+</body>
+</html>
